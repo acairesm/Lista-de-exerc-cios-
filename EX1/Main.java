@@ -6,6 +6,8 @@ public class Main {
 
         Scanner leitor = new Scanner(System.in);
 
+        String input = "";
+        while (!input.equals("sair")) {
 
 
         System.out.println("CALCULADORA");
@@ -32,7 +34,14 @@ public class Main {
             calc.Calculardivicao();
         }
 
+        System.out.println("Digite 1 para continuar ou 0 para encerrar o programa: ");
+            int escolha = leitor.nextInt();
 
+            if (escolha == 0) {
+                input = "sair";
+            } else {
+                input = "";
+            }
 
 
     }
