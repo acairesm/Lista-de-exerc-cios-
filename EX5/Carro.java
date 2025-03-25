@@ -42,10 +42,10 @@ public class Carro {
         System.out.println("ADICIONAR ACELERAÇÂO");
         int addAcelerar = leitor.nextInt();
 
-        this.velocidadeAtual += addAcelerar;
+        velocidadeAtual += addAcelerar;
 
 
-        System.out.println("Acelerando... Velocidade atual: " + this.velocidadeAtual + " km/h");
+        System.out.println("Acelerando... Velocidade atual: " + velocidadeAtual + " km/h");
         leitor.nextLine();
     }
 
@@ -53,9 +53,9 @@ public class Carro {
         System.out.println("ADICIONAR FREAGEM");
         int addFrear = leitor.nextInt();
 
-        this.velocidadeAtual += addFrear;
+        velocidadeAtual += addFrear;
 
-        System.out.println("Freando... Velocidade atual: " + this.velocidadeAtual + " km/h");
+        System.out.println("Freando... Velocidade atual: " + velocidadeAtual + " km/h");
         leitor.nextLine();
 
     }
@@ -67,7 +67,7 @@ public class Carro {
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
         System.out.println("Ano: " + ano);
-        System.out.println("Placa: " + this.placa);
+        System.out.println("Placa: " + placa);
         System.out.println("Velocidade atual: " + velocidadeAtual + " km/h");
 
         System.out.println("---------------------------");
