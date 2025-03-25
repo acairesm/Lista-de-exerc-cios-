@@ -42,7 +42,7 @@ public class Main {
 
             } else if (resposta.equalsIgnoreCase("n")) {
                 System.out.println("Saindo do programa...");
-                break; // Sai do loop
+                break; 
             } else {
                 System.out.println("Opção inválida! Digite 'Y' para adicionar ou 'N' para sair.");
             }
