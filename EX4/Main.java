@@ -14,40 +14,29 @@ public class Main {
                     [0] ADICIONAR JOGADOR
                     [1] EXIBIR JOGADORES
                     [2] MUDAR PONTUAÇÃO
-                    [3] SAIR
+                    [3] MUDAR NÍVEL
+                    [4] SAIR
                     """);
 
             int op = leitor.nextInt();
             leitor.nextLine();
 
             if (op == 0) {
-
-                System.out.println("Qual o nome do jogador?");
-                String nome = leitor.nextLine();
-
-                System.out.println("Qual a pontuação inicial?");
-                int pontuacao = leitor.nextInt();
-
-                System.out.println("Qual o nível inicial?");
-                int nivel = leitor.nextInt();
-                leitor.nextLine();
-
-                Jogadores.add(new Jogador(nome, pontuacao, nivel));
+                Jogador novoJogador = Jogador.addinfo(leitor);
+                Jogadores.add(novoJogador);
                 System.out.println("Jogador adicionado com sucesso!");
 
             } else if (op == 1) {
-
                 if (Jogadores.isEmpty()) {
                     System.out.println("Nenhum jogador cadastrado.");
                 } else {
                     System.out.println("Jogadores Cadastrados:");
                     for (Jogador jogador : Jogadores) {
-                        System.out.println("Nome: " + jogador.nome + " | Pontuação: " + jogador.pontuacao + " | Nível: " + jogador.nivel);
+                        jogador.exibirInfo();
                     }
                 }
 
             } else if (op == 2) {
-   
                 if (Jogadores.isEmpty()) {
                     System.out.println("Nenhum jogador cadastrado.");
                     continue;
@@ -59,16 +48,7 @@ public class Main {
 
                 for (Jogador jogador : Jogadores) {
                     if (jogador.nome.equalsIgnoreCase(nome)) {
-                        System.out.println("Digite a nova pontuação:");
-                        jogador.pontuacao = leitor.nextInt();
-                        leitor.nextLine();
-                        System.out.println("Pontuação alterada!");
-
-
-                        System.out.println("Digite o novo nivel:");
-                        jogador.nivel = leitor.nextInt();
-                        leitor.nextLine();
-                        System.out.println("Nivel alterado!");
+                        jogador.atualizarPontuacao(leitor);
                         encontrado = true;
                         break;
                     }
@@ -79,7 +59,28 @@ public class Main {
                 }
 
             } else if (op == 3) {
-                // Sair do programa
+                if (Jogadores.isEmpty()) {
+                    System.out.println("Nenhum jogador cadastrado.");
+                    continue;
+                }
+
+                System.out.println("Digite o nome do jogador para alterar o nível:");
+                String nome = leitor.nextLine();
+                boolean encontrado = false;
+
+                for (Jogador jogador : Jogadores) {
+                    if (jogador.nome.equalsIgnoreCase(nome)) {
+                        jogador.atualizarNivel(leitor);
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println("Jogador não encontrado.");
+                }
+
+            } else if (op == 4) {
                 System.out.println("Saindo...");
                 break;
 
@@ -91,4 +92,3 @@ public class Main {
         leitor.close();
     }
 }
-
