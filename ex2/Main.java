@@ -19,16 +19,10 @@ public class Main {
             leitor.nextLine();
 
             if (opcao == 0) {
-                if (livros.isEmpty()) {
-                    System.out.println("Nenhum livro cadastrado.");
-                } else {
-                    System.out.println("LIVROS CADASTRADOS:");
-                    for (Biblioteca livro : livros) {
-                        livro.exibiInfo();
-                    }
+                System.out.println("LIVROS CADASTRADOS:");
+                for (Biblioteca livro : livros) {
+                    System.out.println(livro);
                 }
-
-
             } else if (opcao == 1) {
                 System.out.println("----------------------------");
                 System.out.println("TÍTULO:");

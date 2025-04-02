@@ -10,7 +10,7 @@ class Biblioteca {
     }
 
 
-    public void exibiInfo() {
-        System.out.println("TÍTULO: " + titulo + " | AUTOR: " + autor + " | ANO: " + ano);
+    public String toString() {
+        return "Título: " + titulo + ", Autor: " + autor + ", Ano: " + ano;
     }
 }
